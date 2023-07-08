@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+
+
 group = 'be.mohamed.passgenerator'
 version = '1.0-SNAPSHOT'
 
@@ -16,4 +18,7 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+compileJava {
+    options.encoding = 'UTF-8'
 }
