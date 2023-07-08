@@ -31,4 +31,4 @@ Pour exécuter l'application, vous pouvez double-cliquer sur le fichier JAR gén
 
 PassGenerator est un outil pratique pour créer rapidement des mots de passe sécurisés. Il offre une interface utilisateur conviviale et des options de personnalisation flexibles. N'hésitez pas à l'utiliser pour renforcer la sécurité de vos comptes en ligne !
 
-Pour plus d'informations et pour accéder au code source du projet, veuillez consulter [le dépôt GitHub]([https://github.com/Arnemix/PassGenerator])).
+Pour plus d'informations et pour accéder au code source du projet, veuillez consulter [le dépôt GitHub](https://github.com/Arnemix/PassGenerator).
