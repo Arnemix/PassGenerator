@@ -2,19 +2,13 @@ package be.mohamed.passgenerator;
 
 import javax.swing.*;
 import java.awt.*;
-import java.net.PasswordAuthentication;
-import java.util.UUID;
 
 public class AppWindow extends JFrame {
 
-    private JCheckBox includeLowAndUpperCase;
-    private JCheckBox includeNumbers;
-    private JCheckBox includeSymbols;
-    private JButton generatePassword;
-    private JTextField password;
-
-
-
+    private final JCheckBox includeUpperCase;
+    private final JCheckBox includeNumbers;
+    private final JCheckBox includeSymbols;
+    private final JTextField passwordField;
 
 
     public AppWindow() {
@@ -28,30 +22,31 @@ public class AppWindow extends JFrame {
 
         includeNumbers = new JCheckBox("Inclure des nombres");
         includeSymbols = new JCheckBox("Inclure des symboles");
-        includeLowAndUpperCase = new JCheckBox("Inclure des majuscules/minuscules");
+        includeUpperCase = new JCheckBox("Inclure des Majuscules");
 
-        password = new JTextField(20);
-        password.setEditable(false);
+        passwordField = new JTextField(20);
+        passwordField.setEditable(false);
 
-        generatePassword = new JButton("Générer le mot de passe");
+        JButton generatePassword = new JButton("Générer le mot de passe");
 
         generatePassword.addActionListener(e -> {
-            password.setText(UUID.randomUUID().toString());
-        });
+            Password password = new Password(includeSymbols.isSelected(), includeUpperCase.isSelected(), includeNumbers.isSelected(), 20);
+            passwordField.setText(password.generate());
 
+        });
 
 
         includeNumbers.setAlignmentX(Component.CENTER_ALIGNMENT);
         includeSymbols.setAlignmentX(Component.CENTER_ALIGNMENT);
-        includeLowAndUpperCase.setAlignmentX(Component.CENTER_ALIGNMENT);
+        includeUpperCase.setAlignmentX(Component.CENTER_ALIGNMENT);
         generatePassword.setAlignmentX(Component.CENTER_ALIGNMENT);
-        password.setAlignmentX(Component.CENTER_ALIGNMENT);
+        passwordField.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         contentPane.add(includeNumbers);
         contentPane.add(includeSymbols);
-        contentPane.add(includeLowAndUpperCase);
+        contentPane.add(includeUpperCase);
         contentPane.add(generatePassword);
-        contentPane.add(password);
+        contentPane.add(passwordField);
 
         setContentPane(contentPane);
         setLocationRelativeTo(null);
@@ -59,8 +54,6 @@ public class AppWindow extends JFrame {
 
 
     }
-
-
 
 
 }
