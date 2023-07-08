@@ -6,7 +6,7 @@ plugins {
 mainClassName = 'be.mohamed.passgenerator.Main'
 
 group = 'be.mohamed.passgenerator'
-version = '1.0-SNAPSHOT'
+version = '1.0.1-SNAPSHOT'
 
 repositories {
     mavenCentral()
