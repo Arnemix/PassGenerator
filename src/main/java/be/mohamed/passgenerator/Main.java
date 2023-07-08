@@ -7,9 +7,11 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println("Lancement du programme ...");
+
 
         SwingUtilities.invokeLater(AppWindow::new);
+
+        JOptionPane.showMessageDialog(new JFrame(), "Cette application est en phase de développement");
 
 
 

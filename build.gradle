@@ -1,8 +1,9 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
-
+mainClassName = 'be.mohamed.passgenerator.Main'
 
 group = 'be.mohamed.passgenerator'
 version = '1.0-SNAPSHOT'
@@ -19,6 +20,16 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'be.mohamed.passgenerator.Main'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
 compileJava {
     options.encoding = 'UTF-8'
 }
